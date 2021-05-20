@@ -1,0 +1,21 @@
+With stream, we perform one or more intermediate operations( map(), filter(), sorted()..etc)
+ and at the end we perform one Terminal operation(forEach(), collect(), reduce()..etc)
+ => Intermediate operations are performed on Stream and they return stream back.
+ => Terminal operations are performed on Stream but they anything except a Stream.
+
+ => Functional Interface can have just one unimplemented method.
+
+ => filter() function accepts a class that implements Predicate interface.
+    Predicate is a functional interface with one unimplemented method
+    When we write list.stream().filter(x -> x%2==0), we are providing implementation to that unimplemented method called test().
+    It accepts one input and gives a boolean output.
+ => map() function accepts a class that implements Function interface.
+    Function is a functional interface with one unimplemented method called apply()
+    It accepts single input and returns single output.
+    When we write list.stream().map(x -> x*x), we are providing implementation to that unimplemented method called apply().
+ => forEach() function accepts a class that implements Consumer interface.
+    consumer is a functional interface with one unimplemented method accept()
+    This method accepts single input and returns void.
+    When we write list.stream().forEach(System.out::println), we are providing implementation to that unimplemented method called accept().
+
+ => Behaviour Parameterization : When we pass logic as a parameter to the function. FP05BehaviourParameterization.java
